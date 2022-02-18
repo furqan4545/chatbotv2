@@ -1,0 +1,184 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hellooooo
+    - helo
+    - hi
+    - hey hoomie
+    - hi homie
+    - hi homey
+    - hiiii
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: greet_with_name
+  examples: |
+    - my name is [ume](PERSON)
+    - my name is [huzaifa](PERSON)
+    - my name is [furqan](PERSON)
+    - i am [daniel](PERSON)
+    - i am [max](PERSON)
+    - i am [wick](PERSON)    
+
+- intent: track_order
+  examples: |
+    - where is my order?
+    - where is my package?
+    - where is my item?
+    - when will my order arrive?
+    - when will my item arrive?
+    - what is the delivery date of my package?
+    - where is my order at the moment?
+    - track my order
+    - when will my order come?
+    - track my package
+    - track my 
+  
+- intent: give_ON
+  examples: |
+    - Here is my order number [3d4rd32k90d](order_n)
+    - my order number [4rdc80d0wd8d2rds9](order_n)
+    - order nuumber: [0ds98d9d9d0ww0](order_n)
+    - [45k32j1kl3ow8](order_n)
+    - [900wds92i21o1ol](order_n)
+    - [323jk2klk2n1n34b](order_n)
+
+- intent: grateful
+  examples: |
+    - thank you so much!
+    - thanks for the help.
+    - thanks for the information.
+    - thank you for the information.
+    - ok great.
+    - awesome, thanks.
+    - I am glad for the help.
+    - thank you for the support.
+    - aha, awesome.
+
+- intent: FA_not_require
+  examples: |
+    - No thanks, that's it for today.
+    - No thanks.
+    - that's all I need.
+    - that is all i need.
+    - no thank you.
+    - that's it for today
+    - that's all fo today
+    - no, thanks for asking
+    - nops
+
+
+- intent: ask_remind_call
+  examples: |
+    - remind me to call [John](PERSON)
+    - later I have to call [Alan](PERSON)
+    - Please, remind me to call [Vova](PERSON)
+    - please remind me to call [Tanja](PERSON)
+    - I must not forget to call [Juste](PERSON)
+    
+- intent: check_weather
+  examples: |
+    - what is the weather in [seoul](location)?
+    - how is the weather in [japan](location)?
+    - tell me weather in [jeju](location)?
+    - know about weather in [berlin](location)?
+    - weather in [uae](location)
+    - [amsterdam](location)
+    - [karachi](location)
+    - [milan](location)
+    - how is the weather in [hongkong](location)?
+    - how is the weather in [China](location)?
+    - how is the weather in [Switzerland](location)?
+    - how is the weather in [Nepal](location)?
+    - weather in [Kpk](location)
+    - weather in [Daegu](location)
+    - weather in [Johar](location)
+    - weather in [meterovil](location)
+    - weather in [sindorim](location)
+    - tell me about the weather in [balochistan](location)?
+    - tell me about the weather in [okara](location)?
+    
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

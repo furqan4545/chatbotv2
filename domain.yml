@@ -1,0 +1,77 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- EXTERNAL_reminder
+- FA_not_require
+- affirm
+- ask_remind_call
+- bot_challenge
+- check_weather
+- deny
+- give_ON
+- goodbye
+- grateful
+- greet
+- greet_with_name
+- mood_great
+- mood_unhappy
+- track_order
+entities:
+- PERSON
+- order_n
+- location
+slots:
+  PERSON:
+    type: text
+    influence_conversation: false
+  order_n:
+    type: text
+    influence_conversation: false
+  location:
+    type: text
+    influence_conversation: false
+responses:
+  utter_welcome:
+  - text: Hi, I am Jarvis, I am very happy to assist you today.
+  utter_offer_help:
+  - text: How can I help you?
+  - text: Please let me know, how may I help you?
+  utter_greet_3:
+  - text: Hi, I am Jarvis, welcome to our website. Let me quickly pull up your order details so that I may help you
+  utter_empathy:
+  - text: I am sorry to hear that.
+  - text: My sincere apology for the consequences.
+  utter_ask_ON:
+  - text: May I have your order number please?
+  utter_CON:
+  - text: Thanks for the order number.
+  utter_tell_w8:
+  - text: Please hold on for a moment.
+  - text: Please bear with me for a moment.
+  utter_pull_details:
+  - text: Let me quickly pull up the details.
+  utter_give_orderdetails:
+  - text: I just checked your order details and it seems to me that your order is on the way and it will be arriving within 2 days.
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_ask_FA:
+  - text: Is there anything else I can help you with today?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Thanks for contacting Ecom. We are glad to assist you today. Wish you a wonderful day ahead.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_default:
+  - text: Sorry I didn't get that. Can you please rephrase?
+actions:
+- action_check_weather
+- action_check_name
+- action_set_reminder
+- action_react_to_reminder
+- action_fetch_OD
