@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 
 nlu:
 - intent: greet
@@ -48,12 +48,39 @@ nlu:
   
 - intent: give_ON
   examples: |
-    - Here is my order number [3d4rd32k90d](order_n)
-    - my order number [4rdc80d0wd8d2rds9](order_n)
-    - order nuumber: [0ds98d9d9d0ww0](order_n)
-    - [45k32j1kl3ow8](order_n)
-    - [900wds92i21o1ol](order_n)
-    - [323jk2klk2n1n34b](order_n)
+    - Here is my order number [200](order_n)
+    - ok here is my order number [3](order_n)
+    - order number: [10](order_n)
+    - sure my order no is [89](order_n)
+    - my order number is [5](order_n)
+    - ok order no: [4](order_n)
+    - order nuumber: [40](order_n)
+    - ok my order no is [34](order_n)
+    - order no is [44](order_n)
+    - Order id is [76](order_n)
+    - [594](order_n)
+    - [90](order_n)
+    - [32](order_n)
+    - [1](order_n)
+    - [2](order_n)
+    - [3](order_n)
+    - [5](order_n)
+    - [9](order_n)
+    - [12](order_n)
+    - [34](order_n)
+    - my order number is [344](order_n) and I need [replacement](c_need)
+    - my order number is [543](order_n) and I need [refund](c_need)
+    - my order number is [87](order_n), i need [replacement](c_need)
+    - order number [43](order_n), need [refund](c_need)
+    - I want [refund](c_need)
+    - I want to have [refund](c_need)
+    - I need [refund](c_need) on my order
+    - I need [replacement](c_need)
+    - I want to [return](c_need) the item.
+    - I want to [return](c_need) the product.
+    - I need [refund](c_need)
+    - I need my [money back](c_need)
+
 
 - intent: grateful
   examples: |
@@ -61,6 +88,13 @@ nlu:
     - thanks for the help.
     - thanks for the information.
     - thank you for the information.
+    - thanks
+    - ok thanks
+    - Great
+    - great, I am very happy.
+    - great, I am so happy.
+    - sure, thanks
+    - yes, that's great. 
     - ok great.
     - awesome, thanks.
     - I am glad for the help.
@@ -79,6 +113,134 @@ nlu:
     - no, thanks for asking
     - nops
 
+- intent: very_expensive
+  examples: |
+    - I want to buy lawn [dress](product)
+    - I want to a [kurti](product).
+    - I want to buy a [tuxedo](product)
+    - I want to buy a [watch](product) but it's very [expensive](reason_expensive).
+    - I want to buy a [mattress](product) but it's very [expensive](reason_expensive).
+    - I want to buy a [pillow](product) but I can not [afford](reason_expensive) it.
+    - I need some [sugar](product) but it's very [expensive](reason_expensive).
+    - I am looking for buying a [Coffee machine](product) but I can't [afford](reason_expensive) it.
+    - I am looking for buying a [motor cycle](product) but the prices are very [high](reason_expensive).
+    - I am looking for buying a [video game](product) but the price is [too much](reason_expensive).
+    - I need to buy some [handkerchiefs](product) but it seems that they are not in my [range](reason_expensive).
+    - I need to buy some [vegetables](product) but they are [unaffordable](reason_expensive) for me.
+    - I want to buy some [kitchen gadgets](product) but there prices are [very high](reason_expensive).
+    - I want to buy some latest trend [clothes](product) but the prices seems very [high](reason_expensive)
+    - I want to buy a [dress](product) but it is [out of my range](reason_expensive).
+    - I want to buy [jeans](product) and I wish I could [afford](reason_expensive) it. 
+    - I want to buy [beef](product) but it's out of my [budget](reason_expensive).
+    - The dress is very [expensive](reason_expensive). I need discount. 
+    - I need [discount](reason_expensive).
+    - I want [discount](reason_expensive)
+    - can you offer me [discount](reason_expensive)?
+    - can you offer me [promocode](reason_expensive)?
+    - any [discount](reason_expensive) offer?
+    - Any promo or [discount](reason_expensive)?
+    - would you mind if I ask for [promo code](reason_expensive)?
+    - can you please give [discount](reason_expensive)?
+    - can you please give me [discount](reason_expensive)?
+    - I am ecom loyal customer so, can you offer me [discount](reason_expensive)?
+
+- intent: need_more_ds
+  examples: |
+    - still expensive
+    - still can't afford
+    - prices are still high
+    - no, need more discount
+    - please can I have more discount?
+    - still unaffordable
+    - still out of range. Please offer more discount.
+
+- intent: searching_product
+  examples: |
+    - I am searching for some products but I can't find it on website.
+    - I am searching for some items but I can not find one.
+    - I am looking to order some items but I can't find them on your website.
+    - I am looking for [nail polish](product) but I can't find it on the website. 
+    - Can you please help me in finding [gulahmed kurti](product). My price range is upto [10000](cx_range)
+    - I am looking for [pants](product) but I can't find one. My price range is [5000](cx_range)
+    - looking for [jeans](product). My price range is upto [10000](cx_range)
+    - searching for [casual shirts](product). My budget is [2000](cx_range)
+    - I am looking for [body wash](product). My price range is [500](cx_range)
+    - I can't find [face wash](product). My budget is [300](cx_range)
+    - can not find [leather bags](product). I can invest [400](cx_range).
+    - I want to buy [black color chain](product) but I can't find it on website. I can spend [900](cx_range).
+    - I want to buy [golden bracelet](product) but I am unable to find it on website. Do you have it? My budget is [5000](cx_range)
+    - Can you help me in finding [lipstick](product)? Price range should be [300](cx_range) rupees 
+    - I am looking for [facemask](product). Can you suggest me some face masks? It should be under [500](cx_range) rps
+    - I am searching for [baguette bag](product). It should be under [4000](cx_range)
+    - I am trying to find a man's [hoodie](product). Can you recommend me some? It should be under [4240](cx_range) 
+    - I am looking for [fleece sweetshirt](product). It should be under price range [8010](cx_range)
+    - I am trying to find [leather hoodie](product). I can afford upto [10000](cx_range)
+    - I am searching for [omega watch](product). My price range is [5600](cx_range)
+    - I am looking for [classic chinos pant](product). My price range is [3309](cx_range)
+    - my price range is [3900](cx_range)
+    - my budget is [9800](cx_range)
+    - I can afford [5600](cx_range)
+    
+  
+- intent: complain/late
+  examples: |
+    - [where is the hell is my order](c_reason)?
+    - [why my order is so late](c_reason)?
+    - [why my order didn't arrive yet](c_reason)?
+    - [what is taking so long](c_reason)?
+    - [why I didn't receive my order yet](c_reason)?
+    - [why my order did not arrive yet](c_reason)?
+    - [why my order is too much late? what is taking so long](c_reason)?
+    - [I had ordered crockery 4 days ago and I choosed next day delivery and I haven't received order yet](c_reason).
+    - [It has been a week and my order didn't arrive yet](c_reason).
+    - [why is it taking so long](c_reason)?
+    - [I had ordered barbie doll for my daughter's birthday and it still didn't arrive yet](c_reason). 
+
+- intent: complain/damage
+  examples: |
+    - [order is damage](c_reason).
+    - [my order arrived damaged](c_reason) and [I need replacement](c_need)
+    - [my order is broken](c_reason)
+    - [my order arrived broken](c_reason)
+    - [my order is damaged badly and I am pissed off](c_reason)
+    - [my order is damaged](c_reason)
+    - [glass is shattered](c_reason)
+    - [pants are torn up](c_reason)
+    - [my led arrived broken](c_reason). 
+    - [I ordered sweet shirts but I received defected peace](c_reason).
+    - [I ordered 5 sweaters but one of them is defected](c_reason). 
+    - [I ordered 5 shirts, one of them worn out](c_reason)
+    - [I received a faulty peace](c_reason).
+    - [I ordered led but the screen is not working properly](c_reason)
+    - [not working fine](c_reason).
+    - [not working properly](c_reason)
+    - [I ordered a toy for my daughter on her birthday but it arrived damage](c_reason)
+
+- intent: complain/size_issue
+  examples: |
+    - [I ordered pair of jeans but one of them is small in size](c_reason)
+    - [I ordered 4 large bags but one of them is small](c_reason) 
+    - [I ordered 3 medium size sweeter but of them is small](c_reason) 
+    - [my item is small in size](c_reason)
+    - [I didn't receive correct size](c_reason) 
+    - [I received small size](c_reason) 
+    - [I received large size](c_reason)
+    
+- intent: give_email
+  examples: |
+    - Sure, my email is [furqan.ali@gmail.com](email)
+    - sure my id is [joon@gmail.com](email)
+    - ok my id: [tobi@oscar.com](email)
+    - ok account: [khal@ointment.com](email)
+    - my email id is [zubei.445@police.com](email)
+    - yes my email id is [sanorita.9087@gmail.com](email)
+    - contact number: [0314898763](cn) and email id: [fffloi@gmail.com](email)
+    - contact number [0215909908](cn) and email [Lopez.star@gmail.com](email)
+    - my contact number is [09083772927](cn) and email account is [farah@jasmine.com](email)
+    - email is [furq7802@gmail.com](email) and c.n is [02123647839](cn)
+    - my email and contact num is [ilzeb34@gmail.com](email) , [03134554655](cn)
+    - my contact num is [03127876383](cn) 
+    - contact number: [09347382293](cn)
 
 - intent: ask_remind_call
   examples: |

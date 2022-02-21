@@ -1,7 +1,8 @@
-version: '2.0'
+version: '3.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 intents:
 - EXTERNAL_reminder
 - FA_not_require
@@ -18,20 +19,76 @@ intents:
 - mood_great
 - mood_unhappy
 - track_order
+- very_expensive
+- need_more_ds
+- searching_product
+- complain
+- give_email
+
 entities:
-- PERSON
-- order_n
-- location
+  - PERSON
+  - order_n
+  - location
+  - product
+  - reason_expensive
+  - cx_range
+  - c_reason
+  - c_need
+  - email
+  - cn
+
 slots:
   PERSON:
     type: text
-    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: PERSON
   order_n:
     type: text
-    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: order_n
+  product:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: product
+  reason_expensive:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: reason_expensive
+  cx_range:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: cx_range
+  c_reason:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: c_reason
+  c_need:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: c_need
+  email:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: email
+  cn:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: cn
   location:
     type: text
-    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: location
+
 responses:
   utter_welcome:
   - text: Hi, I am Jarvis, I am very happy to assist you today.
@@ -47,13 +104,31 @@ responses:
   - text: May I have your order number please?
   utter_CON:
   - text: Thanks for the order number.
-  utter_tell_w8:
-  - text: Please hold on for a moment.
+  utter_tell_wait:
+  - text: Please bear with me for a moment.
+  utter_ask_wait:
   - text: Please bear with me for a moment.
   utter_pull_details:
   - text: Let me quickly pull up the details.
   utter_give_orderdetails:
   - text: I just checked your order details and it seems to me that your order is on the way and it will be arriving within 2 days.
+  utter_offer_more_ds:
+  - text: Since you are our loyal customer so, I would like to offer you 40% discount out of the box. That's the max I can do for you.
+  utter_ack_thanks:
+  - text: You are most welcome.
+  - text: No problem.
+  utter_promocode:
+  - text: Please use the promocode STUPID while buying the product.
+  unsend_disheared:
+  - text: Ok sure I won't send you dishearted.
+  utter_ten_promocode:
+  - text: Please use the promocode UGLY for 10% discount while buying the product.
+  utter_complain/late:
+  - text: I am so sorry to hear that your order didn't arrive yet. May I have your order number please So, I can record your query?
+  utter_complain/damage:
+  - text: I am very sorry to hear that you received a defected order. Please let me know your order number, also do you need replacement or refund for the item?
+  utter_complain/size_issue:
+  - text: My sincere apology for sending you a wrong size item. May I have your order number please, also do you need replacement or refund for the item?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -69,9 +144,18 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_default:
   - text: Sorry I didn't get that. Can you please rephrase?
+
 actions:
-- action_check_weather
-- action_check_name
-- action_set_reminder
-- action_react_to_reminder
-- action_fetch_OD
+  - action_check_weather
+  - action_check_name
+  - action_set_reminder
+  - action_react_to_reminder
+  - utter_CON
+  - utter_tell_wait
+  - action_fetch_OD
+  - action_offer_discount
+  - utter_ask_wait
+  - action_search_product
+  - action_suggest_product
+  - action_jot_complain
+  - action_ask_email

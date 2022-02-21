@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.0"
 
 rules:
 
@@ -23,3 +23,8 @@ rules:
   steps:
   - intent: EXTERNAL_reminder
   - action: action_react_to_reminder
+
+- rule: respond to complain
+  steps:
+  - intent: complain
+  - action: utter_complain

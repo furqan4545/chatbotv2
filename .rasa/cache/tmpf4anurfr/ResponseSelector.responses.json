@@ -1,0 +1,17 @@
+{
+  "utter_complain/late": [
+    {
+      "text": "I am so sorry to hear that your order didn't arrive yet. May I have your order number please so I can pull up the details and see how can I help?"
+    }
+  ],
+  "utter_complain/damage": [
+    {
+      "text": "I am very sorry to hear that you received a defected order. Please let me know your order number, also do you need replacement or refund for the item?"
+    }
+  ],
+  "utter_complain/size_issue": [
+    {
+      "text": "My sincere apology for sending you a wrong size item. May I have your order number please, also do you need replacement or refund for the item?"
+    }
+  ]
+}

@@ -1,7 +1,6 @@
-version: "2.0"
+version: "3.0"
 
 stories:
-
 
 - story: wismo
   steps:
@@ -11,52 +10,117 @@ stories:
   - intent: track_order
   - action: utter_ask_ON
   - intent: give_ON
+    entities:
+    - order_n: "2"
   - action: utter_CON
-  - action: utter_tell_w8
+  - action: utter_tell_wait
   - action: action_fetch_OD
   - intent: grateful
   - action: utter_ask_FA
   - intent: FA_not_require
   - action: utter_goodbye
 
-
-- story: happy track order demo
+- story: Need discount
   steps:
-  - intent: greet_with_name
+  - intent: greet
   - action: utter_welcome
   - action: utter_offer_help
-  - intent: track_order
-  - action: utter_empathy
-  - action: utter_ask_ON
-  - intent: give_ON
-  - action: utter_CON
-  - action: utter_pull_details
-  - intent: ask_remind_call
-  - action: action_set_reminder
-  - intent: check_weather
-  - action: action_check_weather
+  - intent: very_expensive
+    entities:
+    - product: "watch"
+    - reason_expensive: "afford"
+  - action: action_offer_discount
+  - intent: grateful
+  - action: utter_ack_thanks
+  - action: utter_ten_promocode
+  - action: utter_ask_FA
+  - intent: FA_not_require
+  - action: utter_goodbye
 
-- story: track order path
+- story: Need Extra discount
   steps:
-  - intent: track_order
-  - action: utter_greet_3
-  - action: utter_ask_ON
-  - intent: give_ON
-  - action: utter_CON
-  - action: utter_pull_details
-  - intent: check_weather
-  - action: action_check_weather
+  - intent: greet
+  - action: utter_welcome
+  - action: utter_offer_help
+  - intent: very_expensive
+    entities:
+    - product: "watch"
+    - reason_expensive: "afford"
+  - action: action_offer_discount
+  - intent: need_more_ds
+  - action: utter_offer_more_ds
+  - intent: grateful
+  - action: utter_ack_thanks
+  - action: utter_promocode
+  - action: utter_ask_FA
+  - intent: FA_not_require
+  - action: utter_goodbye
 
-- story: path eda 2
+- story: Help finding product
   steps:
-  - intent: greet_with_name
-  - action: action_check_name
-  - intent: track_order
-  - action: utter_ask_ON
+  - intent: greet
+  - action: utter_welcome
+  - action: utter_offer_help
+  - intent: searching_product
+    entities:
+    - product: "watch"
+    - cx_range: "4000"
+  - action: action_search_product
+  - intent: grateful
+  - action: utter_ack_thanks
+  - action: utter_ask_wait
+  - action: action_suggest_product
+  - action: utter_ask_FA
+  - intent: FA_not_require
+  - action: utter_goodbye
+
+- story: find product and negotiate
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - action: utter_offer_help
+  - intent: searching_product
+    entities:
+    - product: "leather bag"
+    - cx_range: "6060"
+  - action: action_search_product
+  - intent: grateful
+  - action: utter_ack_thanks
+  - action: utter_ask_wait
+  - action: action_suggest_product
+  - action: utter_ask_FA
+  - intent: very_expensive
+    entities:
+    - product: "watch"
+    - reason_expensive: "promocode"
+  - action: utter_ten_promocode
+  - intent: grateful
+  - action: utter_ask_FA
+  - intent: FA_not_require
+  - action: utter_goodbye
+
+- story: File a complain
+  steps:
+  - intent: greet
+  - action: utter_welcome
+  - action: utter_offer_help
+  - intent: complain
+    entities:
+    - c_reason: "order is damage"
+  - action: utter_complain
   - intent: give_ON
-  - action: utter_CON
-  - action: utter_pull_details
-  - intent: check_weather
-  - action: action_check_weather
+    entities:
+    - order_n: "70"
+    - c_need: "replacement"
+  - action: action_ask_email
+  - intent: give_email
+    entities:
+    - email: "furqan@gmail.com"
+    - cn: "0909372839"
+  - action: action_jot_complain
+  - intent: grateful
+  - action: utter_ask_FA
+  - intent: FA_not_require
+  - action: utter_goodbye
 
 

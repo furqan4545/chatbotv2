@@ -1,0 +1,32 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}]": "action_set_reminder",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}, {\"prev_action\": {\"action_name\": \"action_set_reminder\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}]": "action_react_to_reminder",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}, {\"prev_action\": {\"action_name\": \"action_react_to_reminder\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}]": "action_listen"
+    },
+    "rule_only_slots": [
+      "PERSON"
+    ],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}, {\"prev_action\": {\"action_name\": \"action_react_to_reminder\"}, \"user\": {\"intent\": \"EXTERNAL_reminder\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}, {\"prev_action\": {\"action_name\": \"action_set_reminder\"}, \"slots\": {\"PERSON\": [1.0]}, \"user\": {\"entities\": [\"PERSON\"], \"intent\": \"ask_remind_call\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]"
+    ]
+  }
+}
