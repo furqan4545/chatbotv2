@@ -5,7 +5,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
@@ -25,7 +25,7 @@ rules:
   - action: action_react_to_reminder
 
 - rule: respond to complain
-  steps:
+  steps:  
   - intent: complain
   - action: utter_complain
 

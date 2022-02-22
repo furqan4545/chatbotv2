@@ -169,3 +169,4 @@ actions:
   - action_suggest_product
   - action_jot_complain
   - action_ask_email
+  - action_reset_all_slots

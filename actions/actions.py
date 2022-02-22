@@ -86,15 +86,15 @@ class ActionOfferDiscount(Action):
         print("here is 2 : ", reason)
 
         if product != None and reason != None:
-            response = f"I am glad that you are interested in buying {product} from us. Would you be happy if offer you 10% discount?"
+            response = f"I am glad that you are interested in buying {product} from us. Would you be happy if I offer you 10% discount?"
         elif product != None and reason == None:
             response = f"I am happy to hear that. Please tell me how can I help you with buying {product}"
         elif product == None and reason != None:
-            response = f"I see. How may I help you in buying {product}?"
+            response = f"I see. How may I help you with discount?"
         
         # respon = f'Here are the tracking detail of your product: {response["particular"]}'
         dispatcher.utter_message(response)
-        return [AllSlotsReset()]
+        return []
 
 class ActionSearchProduct(Action):
    def name(self) -> Text:
@@ -320,6 +320,23 @@ class ActionReactToOD(Action):
 
         return []
 
+
+class ActionResetSlots(Action):
+    """Reminds the user to call someone."""
+
+    def name(self) -> Text:
+        return "action_reset_all_slots"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message("Thanks for contacting Ecom. We are glad to assist you today. Wish you a wonderful day ahead.")
+
+        return [AllSlotsReset()]
 
 
 

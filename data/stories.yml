@@ -18,7 +18,7 @@ stories:
   - intent: grateful
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - story: Need discount
   steps:
@@ -35,7 +35,7 @@ stories:
   - action: utter_ten_promocode
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - story: Need Extra discount
   steps:
@@ -54,7 +54,7 @@ stories:
   - action: utter_promocode
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - story: Help finding product
   steps:
@@ -72,7 +72,7 @@ stories:
   - action: action_suggest_product
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - story: find product and negotiate
   steps:
@@ -97,7 +97,7 @@ stories:
   - intent: grateful
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 - story: File a complain
   steps:
@@ -121,7 +121,7 @@ stories:
   - intent: grateful
   - action: utter_ask_FA
   - intent: FA_not_require
-  - action: utter_goodbye
+  - action: action_reset_all_slots
 
 
 
