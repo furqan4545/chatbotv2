@@ -28,3 +28,13 @@ rules:
   steps:
   - intent: complain
   - action: utter_complain
+
+- rule: express love to my wife
+  steps:
+  - intent: love_fu
+  - action: utter_lovefu
+
+- rule: say yes
+  steps:
+  - intent: funny
+  - action: utter_fun

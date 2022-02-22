@@ -24,6 +24,8 @@ intents:
 - searching_product
 - complain
 - give_email
+- funny
+- love_fu
 
 entities:
   - PERSON
@@ -142,6 +144,14 @@ responses:
   - text: Thanks for contacting Ecom. We are glad to assist you today. Wish you a wonderful day ahead.
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_lovefu:
+  - text: If you are Furqan then I know you love your Wife Ume.
+  - text: If you are talking about Ume then my creator Furqan can only love her.
+  - text: Yes my creator Furqan loves her wife Ume. 
+  utter_fun:
+  - image: https://thumbs.dreamstime.com/z/say-yes-vector-emoji-white-background-172453973.jpg
+    text: yess! 
+  
   utter_default:
   - text: Sorry I didn't get that. Can you please rephrase?
 

@@ -137,6 +137,10 @@ nlu:
     - I want [discount](reason_expensive)
     - can you offer me [discount](reason_expensive)?
     - can you offer me [promocode](reason_expensive)?
+    - but it is very [expensive](reason_expensive)
+    - it is [out of my range](reason_expensive)
+    - but I can't [afford](reason_expensive) it. 
+    - I wish I could [afford](reason_expensive) it
     - any [discount](reason_expensive) offer?
     - Any promo or [discount](reason_expensive)?
     - would you mind if I ask for [promo code](reason_expensive)?
@@ -156,6 +160,10 @@ nlu:
 
 - intent: searching_product
   examples: |
+    - I am looking for [pants](product)
+    - I am looking for [leather bags](product)
+    - I am searching for some [fun toys](product)
+    - I am looking for [jeans](product)
     - I am searching for some products but I can't find it on website.
     - I am searching for some items but I can not find one.
     - I am looking to order some items but I can't find them on your website.
@@ -344,3 +352,21 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: love_fu
+  examples: |
+    - Do you know I love my Wife
+    - Do you know I love Ume?
+    - I love my dear Wife
+    - I am crazy about my dear wife
+    - Do you know I am crazy about my dear wife 
+    - I love my Wife
+
+- intent: funny
+  examples: |
+    - really
+    - Oh really?
+    - wow
+    - Soo cute
+
+  

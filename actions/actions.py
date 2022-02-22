@@ -12,6 +12,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from rasa_sdk.events import AllSlotsReset
 import requests
 import json
 import datetime
@@ -89,11 +90,11 @@ class ActionOfferDiscount(Action):
         elif product != None and reason == None:
             response = f"I am happy to hear that. Please tell me how can I help you with buying {product}"
         elif product == None and reason != None:
-            response = f"I see. Would you be happy if offer you 10% discount on {product}"
-
+            response = f"I see. How may I help you in buying {product}?"
+        
         # respon = f'Here are the tracking detail of your product: {response["particular"]}'
         dispatcher.utter_message(response)
-        return []
+        return [AllSlotsReset()]
 
 class ActionSearchProduct(Action):
    def name(self) -> Text:
